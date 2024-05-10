@@ -23,7 +23,9 @@ pipeline {
             
         }
        stage('tomcat deploy'){
+           steps {
            deploy adapters: [tomcat9(path: '', url: 'http://localhost:8081/')], contextPath: null, war: 'target/*jar'
+           }
        }
         
     }
